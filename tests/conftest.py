@@ -1,3 +1,4 @@
+from encodings import utf_8
 import sys
 import os
 
@@ -40,7 +41,7 @@ assert filename in root_dir_content, (
     f'В корне проекта не найден файл `{filename}`'
 )
 
-with open(filename, 'r') as f:
+with open(filename, 'r', encoding="utf_8") as f:
     file = f.read()
     assert file != default_md, (
         f'Не забудьте оформить `{filename}`'
