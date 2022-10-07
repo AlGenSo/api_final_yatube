@@ -23,7 +23,6 @@
 [Postman](https://www.postman.com/downloads/)
 
 ##### Запуск проекта
-(_чек-боксы для отметки выполненного_)
 
 * _Клонировать репозиторий: `git clone` https://github.com/AlGenSo/api_final_yatube.git_
 * _Перейти в него в командной строке: `cd api_final_yatube`_
