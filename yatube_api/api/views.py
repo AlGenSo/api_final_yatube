@@ -1,5 +1,5 @@
 from rest_framework import viewsets, permissions, filters, generics
-from rest_framework.views import PermissionDenied
+# from rest_framework.views import PermissionDenied
 from rest_framework.pagination import LimitOffsetPagination
 from django.shortcuts import get_object_or_404
 
@@ -25,21 +25,6 @@ class PostViewSet(viewsets.ModelViewSet):
         '''Создание поста автором'''
 
         serializer.save(author=self.request.user)
-
-    def perform_update(self, serializer):
-        '''Изменеие поста автором'''
-
-        if serializer.instance.author != self.request.user:
-            raise PermissionDenied(
-                'Изменение чужого поста запрещено!')
-        super(PostViewSet, self).perform_update(serializer)
-
-    def perform_destroy(self, instance):
-        '''Удаление поста автором'''
-
-        if instance.author != self.request.user:
-            raise PermissionDenied('Удаление чужого поста запрещено!')
-        instance.delete()
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
@@ -69,21 +54,6 @@ class CommentViewSet(viewsets.ModelViewSet):
             author=self.request.user,
             post=get_object_or_404(Post, pk=self.kwargs.get('post_id'))
         )
-
-    def perform_update(self, serializer):
-        '''Изменеие коммента автором'''
-
-        if serializer.instance.author != self.request.user:
-            raise PermissionDenied(
-                'Изменение чужого коммента запрещено!')
-        super(CommentViewSet, self).perform_update(serializer)
-
-    def perform_destroy(self, instance):
-        '''Удаление коммента автором'''
-
-        if instance.author != self.request.user:
-            raise PermissionDenied('Удаление чужого коммента запрещено!')
-        instance.delete()
 
 
 class FollowViewSet(generics.ListCreateAPIView):

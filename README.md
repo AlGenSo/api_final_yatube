@@ -23,16 +23,15 @@
 [Postman](https://www.postman.com/downloads/)
 
 ##### Запуск проекта
-(_чек-боксы для отметки выполненного_)
 
-[ ] _Клонировать репозиторий: `git clone` https://github.com/AlGenSo/api_final_yatube.git_
-[ ] _Перейти в него в командной строке: `cd api_final_yatube_`
-[ ] _Cоздать виртуальное окружение: `python -m venv venv_`
-[ ] _Активировать виртуальное окружение: `. venv/Scripts/activate_`
-[ ] _Обновить pip: `python -m pip install --upgrade pip_`
-[ ] _Установить зависимости из файла requirements.txt: `pip install -r requirements.txt_`
-[ ] _Выполнить миграции: `python manage.py migrate_`
-[ ] _Запустить проект: `python manage.py runserver_`
+* _Клонировать репозиторий: `git clone` https://github.com/AlGenSo/api_final_yatube.git_
+* _Перейти в него в командной строке: `cd api_final_yatube`_
+* _Cоздать виртуальное окружение: `python -m venv venv`_
+* _Активировать виртуальное окружение: `. venv/Scripts/activate`_
+* _Обновить pip: `python -m pip install --upgrade pip`_
+* _Установить зависимости из файла requirements.txt: `pip install -r requirements.txt`_
+* _Выполнить миграции: `python manage.py migrate`_
+* _Запустить проект: `python manage.py runserver`_
 
 ---
 
