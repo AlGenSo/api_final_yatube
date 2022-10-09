@@ -72,4 +72,5 @@ class FollorwSerializer(serializers.ModelSerializer):
                 'Не лучший способ накрутить подписчиков.'
                 'Сам на себя - табу!'
             )
+
         return following

@@ -1,5 +1,4 @@
 from rest_framework import viewsets, permissions, filters, generics
-# from rest_framework.views import PermissionDenied
 from rest_framework.pagination import LimitOffsetPagination
 from django.shortcuts import get_object_or_404
 
@@ -45,6 +44,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         '''Получение всех комментов к посту'''
 
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
+
         return post.comments.all()
 
     def perform_create(self, serializer):
